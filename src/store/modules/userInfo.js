@@ -1,9 +1,6 @@
 /*
  * @Author: linglingling
  */
-/*
- * @Author: linglingling
- */
 const userInfo = {
     namespaced: true,
 

@@ -1,7 +1,6 @@
 /*
  * @Author: linglingling
  */
-
 const common = {
     namespaced: true,
     state: () => ({
