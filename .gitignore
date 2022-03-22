@@ -92,3 +92,6 @@ sw.*
 # Vim swap files
 *.swp
 
+# 忽略eslintignore文件
+# .eslintignore
+
