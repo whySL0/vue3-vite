@@ -14,3 +14,7 @@ app.use(ElementPlus)
 app.use(router)
 app.use(store)
 app.mount('#app')
+
+// TODO: axios请求的封装
+// TODO:  搬迁活动2.0代码
+// TODO:  eslint husky 自动校验加好

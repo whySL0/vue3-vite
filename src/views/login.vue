@@ -62,11 +62,15 @@
             ...mapState({
                 userId: state => state.userId
             })
+            // ...mapState({
+            //     userId: state => state.userInfo.userId
+            // })
         },
         mounted() {
             console.log('login', loginByUsername)
         },
         methods: {
+<<<<<<< HEAD
             // ...mapMutations(['SET_USERID']),
 
             login: _.debounce(async function() {
@@ -97,6 +101,12 @@
             }, 1000, {leading: true, trailing: false}),
 
             // changeUserId: _.debounce(this.SET_USERID('999999'), 1000, {leading: true, trailing: false}),
+=======
+            // ...mapMutations('userInfo', [
+            //     'SET_USERID', // -> this.foo()
+            // ])
+            ...mapMutations(['SET_USERID'])
+>>>>>>> e41a780c3c5eb336fd4032379ea8d8e234d6a964
         }
     }
 </script>
