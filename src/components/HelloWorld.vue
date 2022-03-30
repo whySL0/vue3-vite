@@ -9,8 +9,9 @@ const count = ref(0)
 </script>
 
 <template>
-    <h1 class="msg">{{ msg }}</h1>
-    <el-button type="primary" @click="count++">count is: {{ count }}</el-button>
+  <div></div>
+    <!-- <h1 class="msg">{{ msg }}</h1> -->
+    <!-- <el-button type="primary" @click="count++">count is: {{ count }}</el-button> -->
 </template>
 
 <style scoped lang="scss">
