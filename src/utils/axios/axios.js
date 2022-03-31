@@ -14,7 +14,7 @@ const service = axios.create({
         baseURL: import.meta.env.VITE_BASE_API + import.meta.env.VITE_CORS_API,
         timeout: 15000,
         // 跨域访问时，允许保存cookie
-        withCredentials: true 
+        withCredentials: true
 })
 
 service.interceptors.request.use(

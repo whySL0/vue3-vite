@@ -12,3 +12,7 @@ export const getUserInfo = () => {
 export function getwKPrizeList() {
         return getRequest(`/cust/WkPrizeConfig/l_fndWkPrizeConfigList` )
 }
+
+export function getTable(data) {
+        return postRequest(`discount/discount/l_getPageUserDiscountByAny`, data)
+}

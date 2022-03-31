@@ -9,14 +9,14 @@
             :model="loginForm"
             label-width="0">
             <el-form-item prop="userName">
-                <el-input size="small"
+                <el-input size="medium"
                             v-model="loginForm.userName"
                             auto-complete="off"
                             placeholder="请输入用户名">
                 </el-input>
             </el-form-item>
             <el-form-item  prop="password">
-                <el-input size="small"
+                <el-input size="medium"
                         :type="passwordType"
                         auto-complete="off"
                         v-model="loginForm.password"
@@ -70,7 +70,6 @@
             console.log('login', loginByUsername)
         },
         methods: {
-<<<<<<< HEAD
             // ...mapMutations(['SET_USERID']),
 
             login: _.debounce(async function() {
@@ -101,12 +100,16 @@
             }, 1000, {leading: true, trailing: false}),
 
             // changeUserId: _.debounce(this.SET_USERID('999999'), 1000, {leading: true, trailing: false}),
-=======
-            // ...mapMutations('userInfo', [
-            //     'SET_USERID', // -> this.foo()
-            // ])
-            ...mapMutations(['SET_USERID'])
->>>>>>> e41a780c3c5eb336fd4032379ea8d8e234d6a964
         }
     }
 </script>
+<style lang="scss" scoped>
+    #login {
+        width: 100vw;
+        height: 100vh;
+    }
+    .login-form {
+        width: 300px;
+        margin: 0 auto;
+    }
+</style>
