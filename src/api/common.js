@@ -14,5 +14,5 @@ export function getwKPrizeList() {
 }
 
 export function getTable(data) {
-        return postRequest(`discount/discount/l_getPageUserDiscountByAny`, data)
+        return postRequest(`/cust/wkCustSurvey/l_fndWkCustSurList`, data)
 }

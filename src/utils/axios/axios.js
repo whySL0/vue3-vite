@@ -5,7 +5,8 @@ import NProgress from 'nprogress'
 import 'nprogress/nprogress.css'
 
 // 引入element的message弹框
-import Message from 'element-plus'
+import { ElMessage } from 'element-plus'
+import { getToken } from '../cookie/auth.js'
 
 const SuccessStatus = 200
 const SuccessCode = 0;
@@ -23,6 +24,12 @@ service.interceptors.request.use(
                 if(!config.noNProgress){
                         NProgress.start() 
                 }
+                const isToken = (config.data || {}).isToken === false
+
+                if (!isToken) {
+                        config.headers['Authorization'] = 'Bearer ' + getToken() // 让每个请求携带token--['X-Token']为自定义key 请根据实际情况自行修改
+                }
+
                 return config;
         },
         error => {
@@ -40,7 +47,7 @@ service.interceptors.response.use(
                 if(res.status === SuccessStatus && code === SuccessCode) {
                         return Promise.resolve(res.data)
                 } else {
-                        Message({
+                        ElMessage({
                                 message,
                                 type: 'error'
                         })

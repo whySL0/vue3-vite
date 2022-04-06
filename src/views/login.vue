@@ -40,7 +40,8 @@
 <script>
     import _ from 'lodash';
     import { createNamespacedHelpers } from 'vuex'
-    const { mapState } = createNamespacedHelpers('userInfo')
+    const { mapState, mapMutations } = createNamespacedHelpers('userInfo')
+    import { setToken } from '@/utils/cookie/auth.js'
     import { loginByUsername, getUserInfo, getwKPrizeList } from 'apis/common'
     export default {
         setup() {
@@ -62,20 +63,25 @@
             ...mapState({
                 userId: state => state.userId
             })
-            // ...mapState({
-            //     userId: state => state.userInfo.userId
-            // })
         },
         mounted() {
             console.log('login', loginByUsername)
         },
         methods: {
-            // ...mapMutations(['SET_USERID']),
+            ...mapMutations(['SET_USERID', 'SET_USERINFO']),
 
             login: _.debounce(async function() {
                 try {
                     let res = await loginByUsername(this.loginForm)
-                    consle.log('loginByUsername', res)
+                    console.log('loginByUsername', res)
+                    setToken(res.data.sessionKey);
+                    this.SET_USERID(res.data.id)
+                    let userInfo = res.data;
+                    delete userInfo.btns;
+                    delete userInfo.companys;
+                    delete userInfo.power;
+                    delete userInfo.menus;
+                    this.SET_USERINFO(userInfo)
                 } catch(e) {
 
                 }

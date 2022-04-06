@@ -12,7 +12,7 @@
     <el-pagination
       v-if="page"
       :current-page="page.pageNum || 1"
-      :page-sizes="largePageSize ? largePageSizeArray : defaultPageSizeArray"
+      :page-sizes="defaultPageSizeArray"
       :page-size="page.pageSize || 10"
       :total="page.total"
       :style="{width:width}"
@@ -27,11 +27,11 @@
 <script>
   import {
     defaultPage,
-    defaultPageSizeArray,
-    largePageSizeArray
-  } from '../default'
+    defaultPageSizeArray
+  } from './default.js'
 
   export default {
+    name: 'ListTable',
     props: {
       ifShowSelectedNum: {
         type: Boolean,
@@ -78,8 +78,7 @@
     },
     data: function () {
       return {
-        defaultPageSizeArray,
-        largePageSizeArray
+        defaultPageSizeArray
       }
     },
     mounted() {
