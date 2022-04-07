@@ -10,12 +10,12 @@ const count = ref(0)
 
 <template>
   <div></div>
-    <!-- <h1 class="msg">{{ msg }}</h1> -->
+    <h1 class="msg">{{ msg }}</h1>
     <!-- <el-button type="primary" @click="count++">count is: {{ count }}</el-button> -->
 </template>
 
 <style scoped lang="scss">
-.msg{
+.msg {
   color: $color-primary;
 }
 </style>

@@ -5,11 +5,12 @@ import HelloWorld from './components/HelloWorld.vue'
 </script>
 
 <template>
-  <HelloWorld msg="Hello Vue 3 + Vite" />
+  <HelloWorld msg="Vue 3 + Vite2" />
   <router-view />
 </template>
 
-<style>
+<style lang="scss">
+// @import url('@/assets/scss/common.scss');
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
