@@ -13,6 +13,7 @@ const common = {
         }
     },
     getters: {
+        device: state => state.device,
         skin: state => state.skin
     },
     actions: {

@@ -3,9 +3,13 @@
 -->
 <template>
     <div id="home">
-        <h1>这里是首页</h1>
+        <h3>一个示范型组件</h3>
+        <p class="text-3">使用vue3 composition API写法，通过setup() 获取登录信息状态并return出来</p>
         <test></test>
         <br />
+
+        <h3>一个table组件</h3>
+        <p class="text-3">使用vue2 option API写法</p>
         <!-- <list-table v-bind="attrObj"> -->
         <list-table :api="getTable" :params="params" :list-table="true">
            <el-table-column min-width="120" label="stagAttribute" prop="stagAttribute"></el-table-column>
@@ -18,14 +22,15 @@
            <el-table-column min-width="120" label="dupdateTime" prop="dupdateTime"></el-table-column>
         </list-table>
         <br />
+        <h3>一个图片可滚动缩放 可上下左右平移的组件</h3>
         <p class="text-red">注意：父元素相对定位，设置宽高，子元素绝对定位，设置行内样式：top,left,transform,zoom，zoom用于缩放</p>
         <div ref='uploadBg' class='upload-bg my-2 magnifier'>
             <img ref='uploadBgUrl'
                 :src='uploadBgUrl'
                 id='uploadBgUrl'
                 class='upload-bg-url'
-                width="300"
-                height="150"
+                width="400"
+                height="200"
                 v-drag
                 style='left: 50%; top: 50%; transform: translate(-50%, -50%); zoom: 35.5%'
                 @wheel.prevent='handleTableWheel($event)' />
@@ -34,7 +39,7 @@
 </template>
 <script>
 import ListTable from '@/components/listTable/index.vue'
-import test from '@/components/listTable/test.vue'
+import test from '@/components/test/test.vue'
 import { getTable } from 'apis/common.js'
 export default {
     name: 'Home',

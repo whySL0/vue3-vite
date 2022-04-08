@@ -24,5 +24,6 @@ export default {
 .tips {
     color: rgb(238, 76, 76);
     font-size: 12px;
+    overflow: hidden;
 }
 </style>

@@ -3,7 +3,11 @@
 -->
 <template>
     <div id="login">
+
         <h1>这里是{{title}}</h1>
+        <p>平台：{{device}}</p>
+        <p>皮肤：{{skin}}</p>
+
         <el-form class="login-form"
             ref="loginForm"
             :model="loginForm"
@@ -41,6 +45,8 @@
     import _ from 'lodash';
     import { createNamespacedHelpers } from 'vuex'
     const { mapState, mapMutations } = createNamespacedHelpers('userInfo')
+    const common = createNamespacedHelpers('common')
+
     import { setToken } from '@/utils/cookie/auth.js'
     import { loginByUsername, getUserInfo, getwKPrizeList } from 'apis/common'
     export default {
@@ -62,7 +68,8 @@
         computed: {
             ...mapState({
                 userId: state => state.userId
-            })
+            }),
+            ...common.mapGetters(['device', 'skin'])
         },
         mounted() {
             console.log('login', loginByUsername)
@@ -81,7 +88,8 @@
                     delete userInfo.companys;
                     delete userInfo.power;
                     delete userInfo.menus;
-                    this.SET_USERINFO(userInfo)
+                    this.SET_USERINFO(userInfo);
+                    this.$router.push('/')
                 } catch(e) {
 
                 }
