@@ -41,7 +41,8 @@ const drag = {
                     let style = 'left: ' + l + '%;' +
                     'top:' + t + '%;' +
                     'zoom:' + zoom + '%;' +
-                    'transform:' + 'translate(-' + l + '%, -' + t + '%)';
+                    'transform:' + 'translate(-' + l + '%, -' + t + '%);' + 
+                    'cursor: pointer';
                     el.setAttribute('style', style);
                 };
                 document.onmouseup = function (e) {

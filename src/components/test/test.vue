@@ -1,5 +1,6 @@
 <!--
  * @Author: linglingling
+ * 测试vue3的 composition API 写法
 -->
 <template>
     <div class="tips">
@@ -22,7 +23,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 .tips {
-    color: rgb(238, 76, 76);
+    color: $color-error;
     font-size: 12px;
     overflow: hidden;
 }

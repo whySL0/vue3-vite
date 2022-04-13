@@ -1,9 +1,11 @@
 /*
  * @Author: linglingling
  */
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHashHistory } from 'vue-router'
 export default createRouter({
-    history: createWebHistory(),
+    // createWebHashHistory() 为hash模式
+    // createWebHistory() 为history模式
+    history: createWebHashHistory(),
     routes: [
         {
             path: '/',
