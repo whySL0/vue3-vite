@@ -9,11 +9,11 @@ export default createRouter({
     routes: [
         {
             path: '/',
-            component: () => import('views/index.vue')
+            component: () => import( /* webpackChunkName: "IndexIndex" */ '@/views/index.vue')
         },
         {
             path: '/login',
-            component: () => import('views/login.vue')
+            component: () => import( /* webpackChunkName: "LoginLogin" */ '@/views/login.vue')
         }
     ]
 })
